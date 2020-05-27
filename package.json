@@ -1,0 +1,24 @@
+{
+  "name": "2020-bc-ecomm",
+  "version": "1.0.0",
+  "description": "Store",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deeebeee3/2020-bc-ecomm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deeebeee3/2020-bc-ecomm/issues"
+  },
+  "homepage": "https://github.com/deeebeee3/2020-bc-ecomm#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
