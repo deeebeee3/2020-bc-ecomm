@@ -57,6 +57,15 @@ class UsersRepository{
 
         return records.find(record => record.id === id);  
     }
+
+    async delete(id) {
+        const records = await this.getAll();
+
+        //just keep the records that do not have the passed in id
+        const filteredRecords = records.filter(record => record.id !== id);
+
+        await this.writeAll(filteredRecords);
+    }
 }
 
 const test = async () => {
@@ -66,9 +75,11 @@ const test = async () => {
 
     //const users = await repo.getAll();
 
-    const user = await repo.getOne('60c9d733');
+    //const user = await repo.getOne('60c9d733');
 
-    console.log(user);
+    //console.log(user);
+
+    await repo.delete('b0e82917');
 }
 
 test();
