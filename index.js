@@ -10,7 +10,7 @@ app.use(cookieSession({
     keys: ['wojowjvojwvojwvowjvowi'] //encryption key used to encrypt cookie data
 }));
 
-app.get('/', (req, res) => {
+app.get('/signup', (req, res) => {
     res.send(`
         <div>
             Your id is: ${req.session.userId}
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 //     }
 // };
 
-app.post('/', async (req, res) => {
+app.post('/signup', async (req, res) => {
     //console.log(req.body);
 
     const { email, password, passwordConfirmation } = req.body;
@@ -68,6 +68,11 @@ app.post('/', async (req, res) => {
     req.session.userId = user.id;
     
     res.send('Account created!!!');
+});
+
+app.get('/signout', (req, res) => {
+    req.session = null;
+    res.send('You are logged out');
 });
 
 app.listen(3000, () => {
