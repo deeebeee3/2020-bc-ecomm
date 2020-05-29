@@ -8,5 +8,10 @@
     "email": "test3@test.com",
     "password": "pass",
     "id": "4bc25c42"
+  },
+  {
+    "email": "hallo@test.com",
+    "password": "2e583bc9a03345826c9d1bf283a2c7b3037387812f73560cada03792af149deaf85a2acba5f1adca5e29e4a4fc051b9b8e4d0904fa8e41d15e4a384cd39cd5c6.073d07ecdfc4d1e4",
+    "id": "82d3c6f4"
   }
 ]
