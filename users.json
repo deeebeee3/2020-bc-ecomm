@@ -1,10 +1,12 @@
 [
   {
-    "email": "test@test.com"
-  },
-  {
     "email": "zzz@mailinator.com",
     "password": "password",
     "id": "93377842"
+  },
+  {
+    "email": "test3@test.com",
+    "password": "pass",
+    "id": "4bc25c42"
   }
 ]
