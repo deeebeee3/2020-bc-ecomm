@@ -1,17 +1,7 @@
 [
   {
-    "email": "zzz@mailinator.com",
-    "password": "password",
-    "id": "93377842"
-  },
-  {
-    "email": "test3@test.com",
-    "password": "pass",
-    "id": "4bc25c42"
-  },
-  {
-    "email": "hallo@test.com",
-    "password": "2e583bc9a03345826c9d1bf283a2c7b3037387812f73560cada03792af149deaf85a2acba5f1adca5e29e4a4fc051b9b8e4d0904fa8e41d15e4a384cd39cd5c6.073d07ecdfc4d1e4",
-    "id": "82d3c6f4"
+    "email": "test@test.com",
+    "password": "617234b82fe9ba61a307403d1f29179dccc73f25c48ff062748cdff67fdfb740093f14adb35e704816e38e277a2fb2f7891b2b60aa8d44fc6f93e3015f461ad2.33df6996a21e0a6e",
+    "id": "c39872a5"
   }
 ]
