@@ -3,7 +3,13 @@ const { check, validationResult } = require('express-validator');
 const usersRepo = require('../../repositories/users');
 const signupTemplate = require('../../views/admin/auth/signup');
 const signinTemplate = require('../../views/admin/auth/signin');
-const { requireEmail, requirePassword, requirePasswordConfirmation } = require('./validators');
+const { 
+    requireEmail, 
+    requirePassword, 
+    requirePasswordConfirmation, 
+    requireEmailExists, 
+    requireValidPasswordForUser 
+} = require('./validators');
 
 const router = express.Router();
 
@@ -41,36 +47,8 @@ router.get('/signin', (req, res) => {
 });
 
 router.post('/signin', [
-        check('email')
-            .trim()
-            .normalizeEmail()
-            .isEmail()
-            .withMessage('Must provide a valid email')
-            .custom(async (email) => {
-                const user = await usersRepo.getOneBy({ email });
-
-                if(!user){
-                    throw new Error('Email not found');
-                }
-            }),
-        check('password')
-            .trim()
-            .custom(async (password, { req }) => {
-                const user = await usersRepo.getOneBy({ email: req.body.email });
-
-                if(!user){
-                    throw new Error('Invalid password');
-                }
-
-                const validPassword = await usersRepo.comparePasswords(
-                    user.password,
-                    password
-                );
-            
-                if(!validPassword){
-                    throw new Error('Invalid password');
-                }
-            })
+        requireEmailExists, 
+        requireValidPasswordForUser 
     ], async (req, res) => {
     const errors = validationResult(req);
     console.log(errors);
