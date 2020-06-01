@@ -1,4 +1,5 @@
 const express = require('express');
+const ProductsRepository = require('../../repositories/products');
 
 const router = express.Router();
 
