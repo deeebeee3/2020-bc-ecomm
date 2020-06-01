@@ -23,6 +23,10 @@ router.post('/admin/products/new', [requireTitle, requirePrice], upload.single('
     console.log(req.body);
     console.log(req.file);
 
+    if(!errors.isEmpty()){
+        return res.send(productsNewTemplate({ errors }));
+    }
+
     const image = req.file.buffer.toString('base64');
     const { title, price } = req.body;
     await productsRepo.create({ title, price, image });
