@@ -24,7 +24,7 @@ module.exports = {
     }),
     requirePassword: check('password')
     .trim()
-    .isLength({ min: 4, max: 20})
+    .isLength({ min: 4, max: 20 })
     .withMessage('Must be between 4 and 20 characters'),
     requirePasswordConfirmation: check('passwordConfirmation')
     .trim()
@@ -33,6 +33,9 @@ module.exports = {
     .custom((passwordConfirmation, { req }) => {
         if(passwordConfirmation !== req.body.password){
             throw new Error('Passwords must match');
+        }else{
+            //Synchronous callbacks require  us to return explicit boolean flags
+            return true;
         }
     }),
     requireEmailExists: check('email')
